@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CharactersContext } from '../global/Character'
 
 export function useCharacters() {
-  const { characters, loading, error, favorites, setFavorites } = useContext(CharactersContext)
+  const { characters, viewFavorite, setViewFavorite, favorites, setFavorites, query, setQuery, selected, setSelected } = useContext(CharactersContext)
 
   function addToFavorite(id) {
     setFavorites([...favorites, id])
@@ -13,9 +13,13 @@ export function useCharacters() {
   }
 
   return {
+    status: selected,
     characters,
-    loading,
-    error,
+    viewFavorite,
+    query,
+    setSelected,
+    setQuery,
+    setViewFavorite,
     addToFavorite,
     removeToFavorite
   }

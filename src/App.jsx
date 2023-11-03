@@ -1,5 +1,4 @@
-import Search from './components/Search'
-import Title from './components/Title'
+import Sidebar from './components/Sidebar'
 import ListOfCharacters from './components/ListOfCharacters'
 import { CharactersProvider } from './global/Character'
 import './App.css'
@@ -7,9 +6,10 @@ import './App.css'
 export default function App() {
   return (
     <CharactersProvider>
-      <Search />
-      <Title />
-      <ListOfCharacters />
+      <section className="flex gap-4">
+        <Sidebar />
+        <ListOfCharacters />
+      </section>
     </CharactersProvider>
   )
 }
